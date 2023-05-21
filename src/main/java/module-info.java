@@ -6,4 +6,8 @@ module com.projet.marathon {
 
     opens com.projet.marathon to javafx.fxml;
     exports com.projet.marathon;
+    exports com.projet.marathon.controllers;
+    opens com.projet.marathon.controllers to javafx.fxml;
+    exports com.projet.marathon.entities;
+    opens com.projet.marathon.entities to javafx.fxml;
 }

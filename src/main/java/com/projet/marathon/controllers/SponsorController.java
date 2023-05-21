@@ -1,5 +1,7 @@
-package com.projet.marathon;
+package com.projet.marathon.controllers;
 
+import com.projet.marathon.DbConnexion;
+import com.projet.marathon.entities.Sponsor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

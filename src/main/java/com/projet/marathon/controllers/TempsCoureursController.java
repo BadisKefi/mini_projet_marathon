@@ -1,5 +1,9 @@
-package com.projet.marathon;
+package com.projet.marathon.controllers;
 
+import com.projet.marathon.entities.Coureur;
+import com.projet.marathon.DbConnexion;
+import com.projet.marathon.entities.Marathon;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -39,6 +43,8 @@ public class TempsCoureursController implements Initializable {
     @FXML
     private TableColumn<Coureur, String> prenom_column;
     @FXML
+    private TableColumn<Coureur, String> marathon_column;
+    @FXML
     private TableColumn<Coureur, String> temps_column;
     @FXML
     private Button saisir_btn;
@@ -68,7 +74,8 @@ public class TempsCoureursController implements Initializable {
         if(selectedMarathonId != 0)
             query = "select * from coureur where etat = ? and id_marathon = ?";
         else
-            query = "select * from coureur where etat = ?";
+            query = "select * from coureur c inner join marathon m ON c.id_marathon = m.id WHERE c.etat = ? AND m.etat = ?";
+
         con = DbConnexion.getCon();
         try {
             st = con.prepareStatement(query);
@@ -77,8 +84,10 @@ public class TempsCoureursController implements Initializable {
                 st.setInt(2,selectedMarathonId);
                 System.out.println(st.toString());
             }
-            else
+            else {
                 st.setString(1,"confirme");
+                st.setString(2,"termine");
+            }
             rs = st.executeQuery();
             while (rs.next()){
                 Coureur c = new Coureur();
@@ -128,11 +137,11 @@ public class TempsCoureursController implements Initializable {
     }
     public void listerCoureurs () {
         ObservableList<Coureur> list = getCoureurs();
-        System.out.println(list);
         coureur_table.setItems(list);
         id_column.setCellValueFactory (new PropertyValueFactory<Coureur, Integer>("id"));
         nom_column.setCellValueFactory (new PropertyValueFactory<Coureur, String>("nom"));
         prenom_column.setCellValueFactory (new PropertyValueFactory<Coureur, String>("prenom"));
+        marathon_column.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getMarathon().getNom()));
         temps_column.setCellValueFactory (new PropertyValueFactory<Coureur, String>("temps"));
     }
     @FXML

@@ -1,4 +1,4 @@
-package com.projet.marathon;
+package com.projet.marathon.entities;
 
 public class Sponsor {
     private int id;

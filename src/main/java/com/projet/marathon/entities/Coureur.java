@@ -1,4 +1,4 @@
-package com.projet.marathon;
+package com.projet.marathon.entities;
 
 import java.util.Date;
 

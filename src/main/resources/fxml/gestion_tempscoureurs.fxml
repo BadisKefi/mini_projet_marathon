@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.marathon.TempsCoureursController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.marathon.controllers.TempsCoureursController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,11 +28,16 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Temps Coureurs" GridPane.columnSpan="3">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Temps Coureurs" GridPane.columnSpan="2">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
+      <Button fx:id="logout_btn" alignment="CENTER" mnemonicParsing="false" onAction="#Saisir" prefWidth="120.0" text="LOG OUT" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
       <Label text="temps réalisé :" GridPane.rowIndex="1" />
       <TextField fx:id="temps_field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Label text="filtrer par marathon :" GridPane.rowIndex="2" />
@@ -45,6 +50,7 @@
           <TableColumn fx:id="id_column" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="nom_column" prefWidth="75.0" text="Nom" />
             <TableColumn fx:id="prenom_column" prefWidth="75.0" text="Prenom" />
+            <TableColumn fx:id="marathon_column" prefWidth="75.0" text="Marathon" />
             <TableColumn fx:id="temps_column" prefWidth="75.0" text="Temps" />
         </columns>
          <columnResizePolicy>
