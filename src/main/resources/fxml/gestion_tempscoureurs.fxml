@@ -69,6 +69,11 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </Button>
+            <Button fx:id="decider_btn" alignment="CENTER" mnemonicParsing="false" onAction="#DeciderVinqueur" prefWidth="120.0" text="Decider Vinqueur !" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
          </children>
       </HBox>
    </children>

@@ -192,6 +192,21 @@ public class TempsCoureursController implements Initializable {
         }
     }
     @FXML
+    void DeciderVainqueur(ActionEvent event) {
+        System.out.println("decider vinqueur");
+        String update = "update marathon set vainqueur = ? where id = ?";
+        con = DbConnexion.getCon();
+        try {
+            st = con.prepareStatement(update);
+            st.setFloat(1, (-1));
+            st.setInt(2, selectedId);
+            st.executeUpdate();
+            listerCoureurs();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @FXML
     public void Logout(ActionEvent event) throws IOException {
         RoleUtilisateur.id = 0;
         RoleUtilisateur.role = "";

@@ -1,11 +1,12 @@
 package com.projet.marathon.entities;
 
+
 public class Sponsor {
     private int id;
     private String nom;
     private String logo;
     public int montant;
-    public String marathon;
+    public Marathon marathon;
 
     public int getId() {
         return id;
@@ -37,11 +38,11 @@ public class Sponsor {
         this.montant = montant;
     }
 
-    public String getMarathon() {
+    public Marathon getMarathon() {
         return marathon;
     }
 
-    public void setMarathon(String marathon) {
+    public void setMarathon(Marathon marathon) {
         this.marathon = marathon;
     }
 }
