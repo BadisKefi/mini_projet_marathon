@@ -194,14 +194,32 @@ public class TempsCoureursController implements Initializable {
     @FXML
     void DeciderVainqueur(ActionEvent event) {
         System.out.println("decider vinqueur");
+        // i have an observable list type Coureur, Coureur who have an attribut named temps
+        // i want to get the Coureur name for the one who have the maximum float temps
+        // and save it in the string bellow
+        String vainqueur = "";
+        Coureur vainqueurCoureur = null;
+        float maxTemps = Float.MIN_VALUE;
+
+        for (Coureur coureur : getCoureurs()) {
+            if (coureur.getTemps() > maxTemps) {
+                maxTemps = coureur.getTemps();
+                vainqueurCoureur = coureur;
+            }
+        }
+        if (vainqueurCoureur != null) {
+            vainqueur = vainqueurCoureur.getNom() + vainqueurCoureur.getPrenom();
+        }
+
         String update = "update marathon set vainqueur = ? where id = ?";
         con = DbConnexion.getCon();
         try {
             st = con.prepareStatement(update);
-            st.setFloat(1, (-1));
+            st.setString(1, vainqueur);
             st.setInt(2, selectedId);
             st.executeUpdate();
             listerCoureurs();
+            System.out.println(vainqueur);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

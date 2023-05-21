@@ -12,7 +12,7 @@ public class Marathon {
     private String lieu_arrive;
     private float distance;
     private String etat;
-    private Coureur vainqueur;
+    private String vainqueur;
 
     public Date getDate() {
         return date;
@@ -46,11 +46,11 @@ public class Marathon {
         this.distance = distance;
     }
 
-    public Coureur getVainqueur() {
+    public String getVainqueur() {
         return vainqueur;
     }
 
-    public void setVainqueur(Coureur vainqueur) {
+    public void setVainqueur(String vainqueur) {
         this.vainqueur = vainqueur;
     }
 

@@ -15,4 +15,7 @@ module com.projet.marathon {
     opens com.projet.marathon.part2 to javafx.fxml;
     exports com.projet.marathon.part2.Statique;
     opens com.projet.marathon.part2.Statique to javafx.fxml;
+
+    exports com.projet.marathon.part3;
+    opens com.projet.marathon.part3 to javafx.fxml;
 }
