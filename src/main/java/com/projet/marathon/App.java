@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/gestion_agentchrono.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/gestion_tempscoureurs.fxml"));
         Scene scene = new Scene(parent);
         primaryStage.setTitle("Gestion Agent Chrono");
         primaryStage.setScene(scene);
