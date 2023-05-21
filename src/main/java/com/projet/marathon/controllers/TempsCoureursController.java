@@ -3,18 +3,25 @@ package com.projet.marathon.controllers;
 import com.projet.marathon.entities.Coureur;
 import com.projet.marathon.DbConnexion;
 import com.projet.marathon.entities.Marathon;
+import com.projet.marathon.part2.Statique.RoleUtilisateur;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,6 +36,10 @@ public class TempsCoureursController implements Initializable {
     PreparedStatement st = null;
     ResultSet rs = null;
     ResultSet mrs = null;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
 
     @FXML
     private TextField temps_field;
@@ -179,6 +190,18 @@ public class TempsCoureursController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    public void Logout(ActionEvent event) throws IOException {
+        RoleUtilisateur.id = 0;
+        RoleUtilisateur.role = "";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part2/login.fxml"));
+
+        root = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

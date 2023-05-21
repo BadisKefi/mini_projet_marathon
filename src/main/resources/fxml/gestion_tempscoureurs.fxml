@@ -33,7 +33,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="logout_btn" alignment="CENTER" mnemonicParsing="false" onAction="#Saisir" prefWidth="120.0" text="LOG OUT" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <Button fx:id="logout_btn" alignment="CENTER" mnemonicParsing="false" onAction="#Logout" prefWidth="120.0" text="LOG OUT" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
