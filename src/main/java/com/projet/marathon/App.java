@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/part3/gestion_marathon.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/part2/login.fxml"));
         Scene scene = new Scene(parent);
         primaryStage.setTitle("Marathon Ensemble");
         primaryStage.setScene(scene);
