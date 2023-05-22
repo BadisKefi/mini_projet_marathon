@@ -41,7 +41,7 @@
       <TextField fx:id="logo_field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Label text="Montant :" GridPane.rowIndex="3" />
       <TextField fx:id="montant_field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Label text="Marathon :" GridPane.rowIndex="4" />
+      <Label text="Marathon &quot;pas encore&quot; :" GridPane.rowIndex="4" />
       <ChoiceBox fx:id="marathon_choicebox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <TableView fx:id="sponsor_table" onMouseClicked="#getData" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="5">
         <columns>

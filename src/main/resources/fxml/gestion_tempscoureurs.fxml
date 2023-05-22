@@ -40,7 +40,7 @@
       </Button>
       <Label text="temps réalisé :" GridPane.rowIndex="1" />
       <TextField fx:id="temps_field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label text="filtrer par marathon :" GridPane.rowIndex="2" />
+      <Label text="filtrer par marathon terminé :" GridPane.rowIndex="2" />
       <ChoiceBox fx:id="marathon_choicebox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets />
