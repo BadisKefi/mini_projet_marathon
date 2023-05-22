@@ -134,6 +134,7 @@ public class SponsorController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     void getData (MouseEvent event) {
         Sponsor s = sponsor_table.getSelectionModel().getSelectedItem();
@@ -191,7 +192,7 @@ public class SponsorController implements Initializable {
         con = DbConnexion.getCon();
         try {
             st = con.prepareStatement(query);
-            st.setString(1,"termine");
+            st.setString(1,"pas encore");
             rs = st.executeQuery();
             while (rs.next()){
                 Marathon m = new Marathon();
@@ -287,5 +288,12 @@ public class SponsorController implements Initializable {
         public SponsorController.ChoiceItem fromString(String string) {
             throw new UnsupportedOperationException("Not supported");
         }
+    }
+    private void AlertMe(String title, String description , Alert.AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(description);
+        alert.showAndWait();
     }
 }

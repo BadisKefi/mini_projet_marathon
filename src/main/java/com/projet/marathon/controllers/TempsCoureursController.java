@@ -251,14 +251,8 @@ public class TempsCoureursController implements Initializable {
             listerCoureurs();
         }
     }
-    private void AlertMeWarning(String title, String description) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(description);
-        alert.showAndWait();
-        coureur_table.refresh();
-    }
+
+
     public static class ChoiceItem {
         private String value;
         private int id;
@@ -294,5 +288,12 @@ public class TempsCoureursController implements Initializable {
         public ChoiceItem fromString(String string) {
             throw new UnsupportedOperationException("Not supported");
         }
+    }
+    private void AlertMe(String title, String description , Alert.AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(description);
+        alert.showAndWait();
     }
 }

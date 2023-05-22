@@ -52,7 +52,7 @@ public class InscriptionController {
     }
 
     @FXML
-    public void inscrire() {
+    public void inscrire(ActionEvent event) throws IOException {
         String pseudoText = pseudo.getText();
         String passwordText = password.getText();
 
@@ -74,6 +74,7 @@ public class InscriptionController {
         // Insérer l'utilisateur dans la base de données
         if (controller.inscrireUtilisateur(utilisateur)) {
             MethodesStatiques.afficherAlerteSuccess("Inscription réussie", "Vous êtes maintenant inscrit !");
+            switchLogin(event);
         } else {
             MethodesStatiques.afficherAlerteError("Erreur d'inscription", "Une erreur s'est produite lors de l'inscription.");
         }

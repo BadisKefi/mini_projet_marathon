@@ -150,12 +150,11 @@ public class AgentChronoController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listerUtilisateurs();
     }
-    private void AlertMeWarning(String title, String description) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
+    private void AlertMe(String title, String description , Alert.AlertType type) {
+        Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(description);
         alert.showAndWait();
-        agentchrono_table.refresh();
     }
 }

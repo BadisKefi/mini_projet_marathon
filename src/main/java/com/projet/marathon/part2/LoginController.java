@@ -85,7 +85,7 @@ public class LoginController {
                 System.out.println(RoleUtilisateur.id);
                 System.out.println(RoleUtilisateur.role);
                 if(RoleUtilisateur.role.equals("admin")) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/gestion_agentchrono.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part3/gestion_marathon.fxml"));
                     root = loader.load();
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -101,7 +101,7 @@ public class LoginController {
                     stage.show();
                 }
                 else {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part2/dashboard_admin.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/participer_coureur.fxml"));
                     root = loader.load();
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
