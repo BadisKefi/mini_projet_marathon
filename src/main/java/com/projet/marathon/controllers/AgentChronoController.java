@@ -138,7 +138,7 @@ public class AgentChronoController implements Initializable {
     private static Parent root;
     @FXML
     public void back(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part3/gestion_marathon.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/gestion_marathon.fxml"));
 
         root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

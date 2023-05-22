@@ -1,5 +1,6 @@
-package com.projet.marathon.part2;
+package com.projet.marathon.controllers;
 
+import com.projet.marathon.Statique.MethodesStatiques;
 import com.projet.marathon.entities.Utilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,7 +83,7 @@ public class InscriptionController {
 
     @FXML
     public void switchLogin(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part2/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
         root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

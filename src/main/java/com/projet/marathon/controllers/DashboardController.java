@@ -1,4 +1,4 @@
-package com.projet.marathon.part2;
+package com.projet.marathon.controllers;
 
 import com.projet.marathon.entities.Marathon;
 import javafx.fxml.FXML;

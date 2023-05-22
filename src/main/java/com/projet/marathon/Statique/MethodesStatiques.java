@@ -1,4 +1,4 @@
-package com.projet.marathon.part2;
+package com.projet.marathon.Statique;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

@@ -3,7 +3,7 @@ package com.projet.marathon.controllers;
 import com.projet.marathon.entities.Coureur;
 import com.projet.marathon.DbConnexion;
 import com.projet.marathon.entities.Marathon;
-import com.projet.marathon.part2.Statique.RoleUtilisateur;
+import com.projet.marathon.Statique.RoleUtilisateur;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -228,7 +228,7 @@ public class TempsCoureursController implements Initializable {
     public void Logout(ActionEvent event) throws IOException {
         RoleUtilisateur.id = 0;
         RoleUtilisateur.role = "";
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part2/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
 
         root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

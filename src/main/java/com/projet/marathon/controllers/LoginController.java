@@ -1,6 +1,7 @@
-package com.projet.marathon.part2;
+package com.projet.marathon.controllers;
 
-import com.projet.marathon.part2.Statique.RoleUtilisateur;
+import com.projet.marathon.Statique.MethodesStatiques;
+import com.projet.marathon.Statique.RoleUtilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -85,7 +86,7 @@ public class LoginController {
                 System.out.println(RoleUtilisateur.id);
                 System.out.println(RoleUtilisateur.role);
                 if(RoleUtilisateur.role.equals("admin")) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part3/gestion_marathon.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/gestion_marathon.fxml"));
                     root = loader.load();
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -119,7 +120,7 @@ public class LoginController {
 
     @FXML
     public void switchInscription(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part2/inscription.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/inscription.fxml"));
 
         root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -1,8 +1,8 @@
-package com.projet.marathon.part3;
+package com.projet.marathon.controllers;
 
 import com.projet.marathon.DbConnexion;
 import com.projet.marathon.entities.Marathon;
-import com.projet.marathon.part2.Statique.RoleUtilisateur;
+import com.projet.marathon.Statique.RoleUtilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -98,7 +98,7 @@ public class MarathonController implements Initializable {
             String nomText = nom.getText();
             String lieu_depText = lieu_dep.getText(); // Correction : lieu_dep au lieu de lieu_arv
             String lieu_arvText = lieu_arv.getText();
-            float distanceValue = Integer.parseInt(distance.getText());
+            float distanceValue = Float.parseFloat(distance.getText());
             int idValue = Integer.parseInt(id.getText());
 
             PreparedStatement st = null;
@@ -274,7 +274,7 @@ public class MarathonController implements Initializable {
     public void Logout(ActionEvent event) throws IOException {
         RoleUtilisateur.id = 0;
         RoleUtilisateur.role = "";
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/part2/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
 
         root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
